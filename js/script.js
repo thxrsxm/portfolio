@@ -1,18 +1,17 @@
 // Simple animation for project cards on scroll
 document.addEventListener('DOMContentLoaded', function() {
     const projectCards = document.querySelectorAll('.project-card');
-    const observer = new IntersectionObserver((entries) => {
+    const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.style.opacity = 1;
-                entry.target.style.transform = 'translateY(0)';
+                // Add the class defined in CSS
+                entry.target.classList.add('visible');
+                // Stop watching this element
+                observer.unobserve(entry.target);
             }
         });
     }, { threshold: 0.1 });
     projectCards.forEach(card => {
-        card.style.opacity = 0;
-        card.style.transform = 'translateY(20px)';
-        card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
         observer.observe(card);
     });
 });

@@ -132,6 +132,14 @@ h1 {
     box-shadow: 0 6px 16px var(--shadow-color);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     border: 1px solid rgba(255, 255, 255, 0.05);
+    opacity: 0; /* Default hidden */
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.project-card.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .project-card:hover {
@@ -204,6 +212,14 @@ footer {
     margin-top: 1rem;
     color: var(--text-muted);
     font-size: 0.9rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .project-card {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
 }
 
 /* Responsive Design */
