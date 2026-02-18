@@ -12,6 +12,10 @@ I built this site to have a central place for all my work.
 + **Project Showcase:** A clean grid layout to display my latest work.
 + **Fast & Simple:** No heavy frameworks, just clean code.
 
+## Live Demo
+
+Visit the live site: https://thxrsxm.github.io/portfolio/
+
 ## Built With
 
 + HTML
